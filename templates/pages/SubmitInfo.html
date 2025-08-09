@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block sheri %}
+<h1 class="fs-3 text-warning mb-3 mt-5">تقديم شكوى</h1>
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+<div class="mb-3">
+
+    <label for="inputPassword5" class="form-label">اسم المستخدم</label>
+    <input type="text" required name="username" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+    <div id="passwordHelpBlock" class="form-text">
+        ادخل اسم المستخدم لحساب التي تريد رفع الشكوى عليه
+    </div>
+</div>
+<div class="mb-3">
+
+    <label for="inputPassword5" class="form-label">بريد الالكتروني</label>
+    <input type="email" required name="email" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+    <div id="passwordHelpBlock" class="form-text">
+        ليتم تنبيهك عند انتهاء من الشكوى المرفوعة
+    </div>
+</div>
+<div class="mb-3">
+    <label for="inputPassword5" class="form-label">صورة عن الهوية</label>
+    <input type="file" required name="image" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+    <div id="passwordHelpBlock" class="form-text">
+        يرجى تصوير الهوية الشخصية من الامام
+    </div>
+</div>
+
+<button type="submit" class="btn btn-warning">تسجيل الطلب</button>
+</form>
+{% endblock sheri %}

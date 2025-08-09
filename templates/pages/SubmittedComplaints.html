@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block sheri %}
+{% for submitted_complaint in submitted_complaints %}
+<div class="list-group list-group-flush border-bottom scrollarea"> 
+    
+    <div 
+        class="list-group-item list-group-item-action  py-3 lh-sm" aria-current="true">
+        <div class="d-flex w-100 align-items-center justify-content-between"> <strong class="mb-1">{{submitted_complaint.complaint}}</strong> <small class="mb-3">{{submitted_complaint.get_progress_display}}</small> </div>
+        <div class="d-flex w-100 align-items-center justify-content-between mb-1 small">
+
+            <p>{{submitted_complaint.complaint.desc}}</p>
+            {% if submitted_complaint.progress == '3' %}
+            <a href="{% url 'SubmitComplaint' %}?id={{submitted_complaint.complaint.id}}" class="btn btn-warning">التالي</a>
+            {% else %}
+            <a href="" class="btn btn-warning disabled">التالي</a>
+            {% endif %}
+        </div>
+    </div>
+
+    
+ </div>
+{% empty %}
+<p class="text-center my-5">لا يوجد شكاوي مقدمة حالياََ</p>
+{% endfor %}
+        
+
+{% endblock sheri %}

@@ -1,0 +1,28 @@
+# Django-specific files
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3  # For SQLite database
+
+# Virtual Environment
+.env/
+venv/
+env/
+
+# IDE-specific files (e.g., PyCharm)
+.idea/
+
+# Operating System specific files
+.DS_Store
+Thumbs.db
+
+# Test coverage files
+.coverage
+.tox/
+.eggs/
+
+# Media and Static files (if managed separately or uploaded)
+media/
+static_collected/

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block sheri %}
+
+
+    <form action="{% url 'SubmitInfo' %}" method="get">
+
+        <div class="list-group mb-3"> 
+        {% for complaint in complaints %}
+            <label class="list-group-item d-flex gap-2"> <input class="form-check-input flex-shrink-0" type="radio" name="id" id="listGroupRadios1" value="{{complaint.id}}" {% if forloop.counter == 1 %}checked=""{% endif %}> <span>
+        {{complaint.name}}
+            <small class="d-block text-body-secondary">{{complaint.desc}}</small> </span> </label>
+        {% endfor %}
+     </div>
+
+     <small class="mb-3 d-block">ملاحظة! مدى انهاء الشكوى قد يصل لثلاث ايام</small>
+  <button type="submit" class="btn btn-warning mb-3 d-block">تقديم الشكوى</button>
+
+    </form>
+        
+
+{% endblock sheri %}
