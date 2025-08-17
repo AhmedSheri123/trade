@@ -24,7 +24,7 @@ def SubmitInfo(request):
         email = request.POST.get('email')
         image = request.FILES.get('image')
 
-        submitted_complaint = SubmittedComplaintModel.objects.create(user=user, complaint=complaint, username=username, email=email, image=image, progress='2')
+        submitted_complaint = SubmittedComplaintModel.objects.create(user=user, complaint=complaint, username=username, email=email, image=image, progress='3')
         submitted_complaint.save()
         messages.success(request, 'طلبك قيد المراجعة, ياخذ عادة بين 12 الى 24 ساعة')
         return redirect('SubmittedComplaints')
